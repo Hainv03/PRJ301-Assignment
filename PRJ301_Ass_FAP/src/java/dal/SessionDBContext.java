@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * @author dell
  */
 public class SessionDBContext extends DBContext<Session>{
-    public ArrayList<Session> getBy (String lid,Date from, Date to){
+    public ArrayList<Session> getBy (int lid, Date from, Date to){
         ArrayList<Session> sessions = new ArrayList<>();
         try {
             String sql = "SELECT   ses.seid, ses.isTaken, ses.Date,\n" +
@@ -34,7 +34,7 @@ public class SessionDBContext extends DBContext<Session>{
                          "				   INNER JOIN [Lecturer] l ON l.lid = ses.lid\n" +
                          "WHERE ses.lid = ? AND ses.[Date] >= ? and ses.[Date] <= ?";
             PreparedStatement stm = connection.prepareStatement(sql);
-            stm.setString(1, lid);
+            stm.setInt(1, lid);
             stm.setDate(2, from);
             stm.setDate(3, to);
             ResultSet rs = stm.executeQuery();

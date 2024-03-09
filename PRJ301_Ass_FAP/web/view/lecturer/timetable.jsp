@@ -8,6 +8,25 @@
         <title>FPT University Academic Portal</title>
     </head>
     <body>
+        <div>
+            <h2>FPT University Academic Portal </h2>
+        </div>
+        <div>
+            <p>
+                <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
+            </p> <br>
+            <p>
+                <b>Chú thích:</b> Các hoạt động trong bảng dưới không bao gồm hoạt động ngoại khóa, ví dụ như hoạt động câu lạc bộ ...
+            </p>
+            <p>
+                Các phòng bắt đầu bằng AL thuộc tòa nhà Alpha. VD: AL...<br>
+                Các phòng bắt đầu bằng BE thuộc tòa nhà Beta. VD: BE,..<br>
+                Các phòng bắt đầu bằng G thuộc tòa nhà Gamma. VD: G201,...<br><!-- comment -->
+                Các phòng tập bằng đầu bằng R thuộc khu vực sân tập Vovinam.<br><!-- comment -->
+                Các phòng bắt đầu bằng DE thuộc tòa nhà Delta. VD: DE,..<br><!-- comment -->
+                Little UK (LUK) thuộc tầng 5 tòa nhà Delta
+            </p>
+        </div>
         <form action="timetable" method="GET">
             <input type="hidden" value="${param.id}" name="id"/>
             From: <input type="date" name="from" value="${requestScope.from}"/> -

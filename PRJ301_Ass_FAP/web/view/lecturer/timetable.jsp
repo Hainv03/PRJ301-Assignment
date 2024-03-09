@@ -10,11 +10,11 @@
     <body>
         <div>
             <h2>FPT University Academic Portal </h2>
-        </div>
+        </div> <br>
         <div>
             <p>
                 <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
-            </p> <br>
+            </p> 
             <p>
                 <b>Chú thích:</b> Các hoạt động trong bảng dưới không bao gồm hoạt động ngoại khóa, ví dụ như hoạt động câu lạc bộ ...
             </p>
@@ -58,5 +58,16 @@
                 </tr>
             </c:forEach>
         </table>
+            <br>
+            <div>
+                <b>More note / Chú thích thêm:</b>
+                <li>(attended): Student had attended this activity / Student đã tham gia hoạt động này</li>
+                <li>(absent): Student had NOT attended this activity / Student đã vắng mặt buổi này</li>
+                <li>(-): no data was given / chưa có dữ liệu</li>
+            </div>
+            <br><!-- comment -->
+            <p>
+                <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="abc" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
+            </p>
     </body>
 </html>

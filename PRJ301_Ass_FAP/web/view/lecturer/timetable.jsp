@@ -58,16 +58,18 @@
                 </tr>
             </c:forEach>
         </table>
-            <br>
+                <br>
             <div>
                 <b>More note / Chú thích thêm:</b>
                 <li>(attended): Student had attended this activity / Student đã tham gia hoạt động này</li>
                 <li>(absent): Student had NOT attended this activity / Student đã vắng mặt buổi này</li>
                 <li>(-): no data was given / chưa có dữ liệu</li>
             </div>
-            <br><!-- comment -->
+                <br><!-- comment -->
             <p>
-                <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="abc" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
+                <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="dichvusinhvien@fe.edu.vn" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
             </p>
+                <hr><!-- comment -->
+             
     </body>
 </html>

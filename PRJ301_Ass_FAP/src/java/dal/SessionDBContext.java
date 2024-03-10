@@ -22,6 +22,57 @@ import java.util.logging.Logger;
  */
 public class SessionDBContext extends DBContext<Session>{
     
+    public void takeAttendances(int seid, ArrayList<Attendance> atts) {
+        try {
+            connection.setAutoCommit(false);
+            String sql_remove_atts = "DELETE Attendance WHERE seid = ?";
+            PreparedStatement stm_remove_atts = connection.prepareStatement(sql_remove_atts);
+            stm_remove_atts.setInt(1, seid);
+            stm_remove_atts.executeUpdate();
+
+            for (Attendance att : atts) {
+                String sql_insert_att = "INSERT INTO [Attendance]\n"
+                        + "           ([seid]\n"
+                        + "           ,[sid]\n"
+                        + "           ,[description]\n"
+                        + "           ,[isPresent]\n"
+                        + "           ,[DateTime])\n"
+                        + "     VALUES\n"
+                        + "           (?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,?\n"
+                        + "           ,GETDATE())";
+                PreparedStatement stm_insert_att = connection.prepareStatement(sql_insert_att);
+                stm_insert_att.setInt(1, seid);
+                stm_insert_att.setString(2, att.getStudent().getId());
+                stm_insert_att.setString(3, att.getDescription());
+                stm_insert_att.setBoolean(4, att.isPresent());
+                stm_insert_att.executeUpdate();
+            }
+
+            String sql_update_session = "UPDATE Session SET isTaken = 1 WHERE seid =?";
+            PreparedStatement stm_update_session = connection.prepareStatement(sql_update_session);
+            stm_update_session.setInt(1, seid);
+            stm_update_session.executeUpdate();
+
+            connection.commit();
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            try {
+                connection.rollback();
+            } catch (SQLException ex1) {
+                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } finally {
+            try {
+                connection.setAutoCommit(true);
+            } catch (SQLException ex) {
+                Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
     
     public ArrayList<Student> getStudentsBySession(int seid) {
         ArrayList<Student> students = new ArrayList<>();

@@ -23,7 +23,29 @@ import java.util.logging.Logger;
 public class SessionDBContext extends DBContext<Session>{
     
     
-    
+    public ArrayList<Student> getStudentsBySession(int seid) {
+        ArrayList<Student> students = new ArrayList<>();
+        try {
+            String sql = "SELECT  s.[sid],s.[sname]\n" +
+                         "FROM [Student] s INNER JOIN Enrollment e ON s.[sid] = e.[sid]\n" +
+                         "			 INNER JOIN [Group] g ON g.[gid] = e.[gid]\n" +
+                         "			 INNER JOIN [Session] ses ON ses.[gid] = g.[gid]\n" +
+                         "WHERE ses.[seid] = ?";
+            PreparedStatement stm = connection.prepareStatement(sql);
+            stm.setInt(1, seid);
+            ResultSet rs = stm.executeQuery();
+            while(rs.next())
+            {
+                Student s = new Student();
+                s.setId(rs.getString("sid"));
+                s.setName(rs.getString("sname"));
+                students.add(s);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(SessionDBContext.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return students;
+    }
     
     public ArrayList<Attendance> getAttendencesBySession(int seid) {
         ArrayList<Attendance> atts = new ArrayList<>();

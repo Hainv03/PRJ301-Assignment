@@ -11,17 +11,17 @@ import java.util.ArrayList;
  * @author dell
  */
 public class Group implements IEntity{
-    private String id;
+    private int id;
     private String name;
     private Lecturer lecturer;
     private Subject subject;
     private ArrayList<Student> students = new ArrayList<>();
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

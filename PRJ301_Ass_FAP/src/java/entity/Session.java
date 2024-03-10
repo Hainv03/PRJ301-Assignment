@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author dell
  */
 public class Session implements IEntity{
-    private String id;
+    private int id;
     private Date date;
     private boolean attended;
     private Group group;
@@ -20,11 +20,11 @@ public class Session implements IEntity{
     private Lecturer lecturer;
     private ArrayList<Attendance> atts = new ArrayList<>();
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -82,7 +82,5 @@ public class Session implements IEntity{
 
     public void setAtts(ArrayList<Attendance> atts) {
         this.atts = atts;
-    }
-    
-    
+    }  
 }

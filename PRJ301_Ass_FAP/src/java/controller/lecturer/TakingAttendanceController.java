@@ -47,6 +47,11 @@ public class TakingAttendanceController extends BaseReqAuthentication {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
-      
+        int seid = Integer.parseInt(req.getParameter("id"));
+        SessionDBContext db = new SessionDBContext();
+        ArrayList<Attendance> atts = db.getAttendencesBySession(seid);
+        req.setAttribute("atts", atts);
+        req.getRequestDispatcher("/view/lecturer/att.jsp").forward(req, resp);
+    
     }
 }

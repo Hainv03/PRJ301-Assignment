@@ -14,6 +14,7 @@
     <body>
         <div>
             <h2>FPT University Academic Portal</h2>
+            
         </div>
         <form action="login" method="POST">
             Username: <input type="text" name="username"/> <br/>

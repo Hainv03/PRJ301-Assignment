@@ -3,7 +3,7 @@
     Created on : Mar 11, 2024, 4:49:48 AM
     Author     : dell
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -24,7 +24,7 @@ public class TimeSlotDBContext extends DBContext<TimeSlot>{
             ResultSet rs = stm.executeQuery();
             while (rs.next()) {
                 TimeSlot t = new TimeSlot();
-                t.setId(rs.getString("tid"));
+                t.setId(rs.getInt("tid"));
                 t.setName(rs.getString("tname"));
                 slots.add(t);
             }

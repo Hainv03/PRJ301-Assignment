@@ -42,7 +42,7 @@ public class TakingAttendanceController extends BaseReqAuthentication {
             atts.add(a);
         }
         db.takeAttendances(seid, atts);
-        resp.sendRedirect("att?id="+seid);
+        resp.sendRedirect("Attendance?id="+seid);
     }
 
     @Override

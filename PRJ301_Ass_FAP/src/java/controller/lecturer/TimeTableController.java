@@ -1,4 +1,4 @@
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
@@ -41,22 +41,18 @@ public class TimeTableController extends BaseReqAuthentication {
         java.sql.Date to = null;
         
         Date today = new Date();
-        if(raw_from ==null)
-        {
+        if(raw_from ==null){
             from = DateTimeCV.convertUtilDateToSqlDate(DateTimeCV.getWeekStart(today));
         }
-        else
-        {
+        else{
             from = java.sql.Date.valueOf(raw_from);
         }
         
-        if(raw_to ==null)
-        {
+        if(raw_to ==null){
             to =DateTimeCV.convertUtilDateToSqlDate(
                     DateTimeCV.addDaysToDate(DateTimeCV.getWeekStart(today),6));
         }
-        else
-        {
+        else{
             to = java.sql.Date.valueOf(raw_to);
         }
         

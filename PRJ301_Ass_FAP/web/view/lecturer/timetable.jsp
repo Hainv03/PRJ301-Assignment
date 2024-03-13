@@ -51,7 +51,7 @@
                                 <c:if test="${ses.date eq d and ses.slot.id eq slot.id}">
                                     ${ses.group.name} - ${ses.group.subject.name}
                                     
-                                    <a href="Attendance?id=${ses.id}">
+                                    <a href="att?id=${ses.id}">
                                         <c:if test="${ses.attended}">Edit</c:if>
                                         <c:if test="${!ses.attended}">Take</c:if>
                                     </a>

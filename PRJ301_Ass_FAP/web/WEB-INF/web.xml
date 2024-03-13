@@ -26,7 +26,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TimeTableController</servlet-name>
-        <url-pattern>/TimeTable</url-pattern>
+        <url-pattern>/timetable</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>TakingAttendanceController</servlet-name>

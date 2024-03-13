@@ -12,6 +12,13 @@
         <title>Take Attendance</title>
     </head>
     <body>
+        <button onclick="goBack()">Time Table</button>
+
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
         <form action="att" method="POST">
             <input type="hidden" name="id" value="${param.id}" />
             <table border="1px">

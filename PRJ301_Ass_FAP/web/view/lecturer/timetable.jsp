@@ -11,6 +11,7 @@
         <div>
             <h2>FPT University Academic Portal </h2>
         </div> <br>
+        
         <div>
             <p>
                 <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...

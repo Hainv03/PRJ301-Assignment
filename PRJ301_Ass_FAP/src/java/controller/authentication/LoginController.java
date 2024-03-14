@@ -49,7 +49,7 @@ public class LoginController extends HttpServlet {
             response.addCookie(c_user);
             
             
-            response.getWriter().println( "login sucessful!");
+            response.sendRedirect("view/authentication/home.jsp");
         } else {
             response.getWriter().println("login failed");
         }

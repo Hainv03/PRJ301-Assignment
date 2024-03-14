@@ -84,10 +84,8 @@
             <div class="input">
                 <input type="text"  name="username"/> <br/>
                 <input type="password" name="password"/> <br/>
-            </div>
-            <div class="button">
+            </div> 
                 <input type="submit" value="Login"/>
-            </div>           
         </form> 
         </div>
     </body>

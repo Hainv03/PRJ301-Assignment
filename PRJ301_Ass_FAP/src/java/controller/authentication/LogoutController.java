@@ -22,10 +22,9 @@ public class LogoutController extends HttpServlet {
      @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Xóa session
-        request.getSession().invalidate();
         
-        // Xóa cookie của username và password (nếu có)
+        request.getSession().invalidate();
+
         Cookie[] cookies = request.getCookies();
         if (cookies != null) {
             for (Cookie cookie : cookies) {
@@ -36,7 +35,7 @@ public class LogoutController extends HttpServlet {
             }
         }
         
-        // Chuyển hướng người dùng đến trang login
+        
         response.sendRedirect("login.jsp");
     }
 }

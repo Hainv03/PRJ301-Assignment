@@ -18,26 +18,24 @@ import jakarta.servlet.http.HttpServletResponse;
  * @author dell
  */
 public class LogoutController extends HttpServlet {
-   
-     @Override
+
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+    throws ServletException, IOException {
         
-        request.getSession().invalidate();
+    } 
 
-        Cookie[] cookies = request.getCookies();
-        if (cookies != null) {
-            for (Cookie cookie : cookies) {
-                if (cookie.getName().equals("username") || cookie.getName().equals("password")) {
-                    cookie.setMaxAge(0);
-                    response.addCookie(cookie);
-                }
-            }
-        }
-        
-        
-        response.sendRedirect("login.jsp");
+    
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    throws ServletException, IOException {
+
     }
+
+
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
+
 }
-
-

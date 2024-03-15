@@ -45,6 +45,7 @@
             color: #ffffff;
             border: 1px solid #7cb342;
             background-color: #4caf50;
+            text-decoration: none;
         }
         .box_header{
             padding: 20px 15px;
@@ -102,7 +103,7 @@
                <span class="label">hainvhe170492</span> 
             </a>
              | 
-            <a class="label">
+            <a href="http://localhost:9999/PRJ301_Ass_FAP/login"  class="label">
                logout 
             </a>
              | 

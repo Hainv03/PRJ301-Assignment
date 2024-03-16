@@ -103,7 +103,7 @@
                <span class="label">hainvhe170492</span> 
             </a>
              | 
-            <a href="http://localhost:9999/PRJ301_Ass_FAP/login"  class="label">
+            <a href="http://localhost:9999/PRJ301_Ass_FAP/login"  class="label" onclick="return confirm('Are you sure you want to logout?');">
                logout 
             </a>
              | 

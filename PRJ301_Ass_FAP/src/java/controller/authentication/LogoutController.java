@@ -30,12 +30,18 @@ public class LogoutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
     throws ServletException, IOException {
 
-    }
-
-
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
-
+            request.getSession().invalidate();
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    cookie.setMaxAge(0);
+                    response.addCookie(cookie);
+                }
+            }
+            response.sendRedirect( "login");
+        }
 }
+
+
+
+

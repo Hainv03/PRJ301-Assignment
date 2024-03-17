@@ -52,6 +52,7 @@ public class LoginController extends HttpServlet {
             response.sendRedirect("view/authentication/home.jsp");
         } else {
             response.getWriter().println("login failed");
+            request.getRequestDispatcher("view/authentication/login.jsp").include(request, response);  
         }
     }
     @Override

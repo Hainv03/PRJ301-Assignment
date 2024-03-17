@@ -5,11 +5,13 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="entity.Account" %>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>FPT University Academic Portal</title>
+        
     </head>
     <style>
         .body{
@@ -82,7 +84,6 @@
         
     </style>
     <body>
-        
         <div class="header">
             <h1>
                 <span>FPT University Academic Portal</span>
@@ -102,11 +103,11 @@
             <a>
                <span class="label">hainvhe170492</span> 
             </a>
-             | 
-            <a href="http://localhost:9999/PRJ301_Ass_FAP/login"  class="label" onclick="return confirm('Are you sure you want to logout?');">
-               logout 
+            |
+             <a href="http://localhost:9999/PRJ301_Ass_FAP/logout"  class="label" onclick="return confirm('Are you sure you want to logout?');">
+               logout
             </a>
-             | 
+            | 
             <span class="label">CAMPUS: FPTU-Hòa Lạc</span>
         </div>
         <div class="box_header"></div>

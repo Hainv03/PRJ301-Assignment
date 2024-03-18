@@ -8,7 +8,7 @@
         <title>FPT University Academic Portal</title>
     </head>
     <style>
-        .body{
+        body{
             margin: auto;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 14px;
@@ -44,7 +44,7 @@
             text-decoration: none;
         }
         .box_header{
-            padding: 20px 15px;
+            padding: 15px 15px;
             margin-bottom: 40px;
             list-style: none;
             background-color: #f5f5f5;
@@ -58,6 +58,69 @@
         .footer{
             text-align: center;
         }
+        .view-date {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .view-date form {
+            display: flex;
+            align-items: center;
+        }
+
+        .view-date input[type="date"],
+        .view-date input[type="submit"] {
+            padding: 8px;
+            margin-right: 10px; 
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .view-date input[type="date"]:focus {
+            outline: none;
+            border-color: #6b90da;
+        }
+
+        .view-date input[type="submit"] {
+            background-color: #6b90da;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-date input[type="submit"]:hover {
+            background-color: #5a7eb8;
+        }
+        .time-table table {
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            border: 1px solid #6b90da; 
+            border-radius: 8px; 
+        }
+
+        .time-table th,
+        .time-table td {
+            padding: 10px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+
+        .time-table thead {
+            background-color: #6b90da; 
+            color: black; 
+        }
+
+        .time-table tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .time-table tbody tr:hover {
+            background-color: #ddd;
+        }
+
     </style>
     <body>
             <div class="header">
@@ -114,41 +177,69 @@
                     Little UK (LUK) thuộc tầng 5 tòa nhà Delta
                 </p>
             </div>
-        <form action="timetable" method="GET">
-            <input type="hidden" value="${param.id}" name="id"/>
-            From: <input type="date" name="from" value="${requestScope.from}"/> -
-            <input type="date" name="to" value="${requestScope.to}"/>
-            <input type="submit" value="View"/>
-        </form>
-        <table border="1px">
-            <tr>
-                <td></td>
-                <c:forEach items="${requestScope.dates}" var="d">
-                    <td>
-                        (<fmt:formatDate pattern="E" value="${d}" />)
-                        ${d}</td>
-                </c:forEach>
-            </tr>
-            <c:forEach items="${requestScope.slots}" var="slot">
-                <tr>
-                    <td>${slot.name}</td>
-                    <c:forEach items="${requestScope.dates}" var="d">
-                        <td>
-                            <c:forEach items="${requestScope.sessions}" var="ses">
-                                <c:if test="${ses.date eq d and ses.slot.id eq slot.id}">
-                                    ${ses.group.name} - ${ses.group.subject.name}
-                                    
-                                    <a href="att?id=${ses.id}">
-                                        <c:if test="${ses.attended}">Edit</c:if>
-                                        <c:if test="${!ses.attended}">Take</c:if>
-                                    </a>
-                                </c:if>
+            <div class="view-date">
+                <form action="timetable" method="GET">
+                    <input type="hidden" value="${param.id}" name="id"/>
+                    From &nbsp; <input type="date" name="from" value="${requestScope.from}"/> 
+                    To &nbsp; <input type="date" name="to" value="${requestScope.to}"/>
+                    <input type="submit" value="View"/>
+                </form>
+            </div>
+            <div class="time-table" >
+                <table border="1px" >
+                    <thead>
+                        <tr>
+                                <td rowspan="2">Slots</td>
+                            <c:forEach items="${requestScope.dates}" var="d">
+                                <td>
+                                    <fmt:formatDate pattern="E" value="${d}" />
+                                </td>
                             </c:forEach>
-                        </td>
-                    </c:forEach>
-                </tr>
-            </c:forEach>
-        </table>
+                        </tr>
+                        <tr>
+                            <c:forEach items="${requestScope.dates}" var="d">
+                                <td>
+                                    ${d}
+                                </td>
+                            </c:forEach>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <c:forEach items="${requestScope.slots}" var="slot">
+                            <tr>
+                                    <td>${slot.name}</td>
+                                <c:forEach items="${requestScope.dates}" var="d">
+                                    <td>
+                                        <c:set var="cellEmpty" value="true" />
+                                        <c:forEach items="${requestScope.sessions}" var="ses">
+                                            <c:if test="${ses.date eq d and ses.slot.id eq slot.id}">
+                                                ${ses.group.name} - ${ses.group.subject.name} 
+                                                <br/>
+                                                at ${ses.room.name}
+                                                <br/>
+                                                <a href="att?id=${ses.id}">
+                                                    <div style="color:#7cb342;" >
+                                                        <c:if test="${ses.attended}">Done</c:if>
+                                                    </div>
+                                                    <div style="color:red;" >
+                                                        <c:if test="${!ses.attended}" >(Not yet)</c:if>
+                                                    </div>
+
+                                                </a>
+                                                <c:set var="cellEmpty" value="false" />
+                                            </c:if>
+                                        </c:forEach>
+                                            <c:if test="${cellEmpty}">
+                                                -
+                                            </c:if>
+                                    </td>
+                                </c:forEach>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                </table>
+            </div>
+        
                 <br>
             <div>
                 <b>More note / Chú thích thêm:</b>

@@ -11,14 +11,91 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Take Attendance</title>
     </head>
-    <body>
-        <button onclick="goBack()">Time Table</button>
+    <style>
+        .body{
+            margin: auto;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #333;
+        }
+        .h1{
+            font-family: inherit;
+            font-weight: 500;
+            line-height: 1.1;
+            color: inherit;
+        }
+        .header{
+            display: flex;
+            justify-content: space-around;
+        }
+        .image a{
+            margin: 0 20px;
+        }
+        .div{
+            display: block;
+        }
+        .div.info {
+            float: right;
+            margin-right: 16px; 
+            padding: 5px; 
+        }
 
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+        .label {
+            color: #ffffff;
+            border: 1px solid #7cb342;
+            background-color: #4caf50;
+            text-decoration: none;
+        }
+        .box_header{
+            padding: 20px 15px;
+            margin-bottom: 40px;
+            list-style: none;
+            background-color: #f5f5f5;
+            border-radius: 4px;
+        }
+        a{
+            color: #337ab7;
+            text-decoration: none;
+            background-color: transparent;
+        }
+        .footer{
+            text-align: center;
+        }
+    </style>
+    <body>
+            <div class="header">
+                <h1>
+                    <span>FPT University Academic Portal</span>
+                </h1>
+                <div class="image">
+                    <a href="https://apps.apple.com/us/app/myfap/id1527723314">
+                    <img src="https://fap.fpt.edu.vn/images/app-store.png" >
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.fuct">
+                    <img src="https://fap.fpt.edu.vn/images/play-store.png" >
+                </a>
+                </div>
+
+            </div>
+            <div class="info" style="float:right; margin-right: 16px;">
+                <a>
+                   <span class="label">hainvhe170492</span> 
+                </a>
+                 | 
+                <a href="http://localhost:9999/PRJ301_Ass_FAP/logout"  class="label" onclick="return confirm('Are you sure you want to logout?');">
+                   logout 
+                </a>
+                 | 
+                <span class="label">CAMPUS: FPTU-Hòa Lạc</span>
+            </div>
+            <div class="box_header">
+                    <li>
+                        <a href="http://localhost:9999/PRJ301_Ass_FAP/timetable?id=1">View Schedule</a>
+                         &nbsp;|&nbsp; 
+                        <b>Attendance</b>
+                    </li>
+            </div>
         <form action="att" method="POST">
             <input type="hidden" name="id" value="${param.id}" />
             <table border="1px">
@@ -50,5 +127,12 @@
             </table>
             <input type="submit" value="Save"/>
         </form>
+                <p>
+                    <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="dichvusinhvien@fe.edu.vn" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
+                </p>
+            <hr/>
+            <div class="footer">
+                <p>© Powered by <a href="https://fpt.edu.vn/">FPT University</a> |  <a href="https://cmshn.fpt.edu.vn/">CMS</a> |  <a href="https://library.fpt.edu.vn/">library</a> |  <a href="https://library.books24x7.com/login.asp?ic=0">books24x7</a></p>
+            </div>
     </body>
 </html>

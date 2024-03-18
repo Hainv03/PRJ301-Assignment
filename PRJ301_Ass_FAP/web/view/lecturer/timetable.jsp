@@ -55,62 +55,65 @@
             text-decoration: none;
             background-color: transparent;
         }
+        .footer{
+            text-align: center;
+        }
     </style>
     <body>
-        <div class="header">
-            <h1>
-                <span>FPT University Academic Portal</span>
-            </h1>
-            <div class="image">
-                <a href="https://apps.apple.com/us/app/myfap/id1527723314">
-                <img src="https://fap.fpt.edu.vn/images/app-store.png" >
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.fuct">
-                <img src="https://fap.fpt.edu.vn/images/play-store.png" >
-            </a>
+            <div class="header">
+                <h1>
+                    <span>FPT University Academic Portal</span>
+                </h1>
+                <div class="image">
+                    <a href="https://apps.apple.com/us/app/myfap/id1527723314">
+                    <img src="https://fap.fpt.edu.vn/images/app-store.png" >
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.fuct">
+                    <img src="https://fap.fpt.edu.vn/images/play-store.png" >
+                </a>
+                </div>
+
             </div>
-            
-        </div>
-        <div class="info" style="float:right; margin-right: 16px;">
-            <a>
-               <span class="label">hainvhe170492</span> 
-            </a>
-             | 
-            <a href="http://localhost:9999/PRJ301_Ass_FAP/login"  class="label" onclick="return confirm('Are you sure you want to logout?');">
-               logout 
-            </a>
-             | 
-            <span class="label">CAMPUS: FPTU-Hòa Lạc</span>
-        </div>
-        <div class="box_header">
-                <li>
-                    <a href="http://localhost:9999/PRJ301_Ass_FAP/view/authentication/home.jsp">Home</a>
-                     &nbsp;|&nbsp; 
-                    <b>View Schedule</b>
-                </li>
-        </div>
+            <div class="info" style="float:right; margin-right: 16px;">
+                <a>
+                   <span class="label">hainvhe170492</span> 
+                </a>
+                 | 
+                <a href="http://localhost:9999/PRJ301_Ass_FAP/logout"  class="label" onclick="return confirm('Are you sure you want to logout?');">
+                   logout 
+                </a>
+                 | 
+                <span class="label">CAMPUS: FPTU-Hòa Lạc</span>
+            </div>
+            <div class="box_header">
+                    <li>
+                        <a href="http://localhost:9999/PRJ301_Ass_FAP/view/authentication/home.jsp">Home</a>
+                         &nbsp;|&nbsp; 
+                        <b>View Schedule</b>
+                    </li>
+            </div>
         
-        <div>
-            <p>
-                <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
-            </p> 
-            <p>
-                <b>Chú thích:</b> Các hoạt động trong bảng dưới không bao gồm hoạt động ngoại khóa, ví dụ như hoạt động câu lạc bộ ...
-            </p>
-            <p>
-                Các phòng bắt đầu bằng AL thuộc tòa nhà Alpha. VD: AL...
-                <br>
-                Các phòng bắt đầu bằng BE thuộc tòa nhà Beta. VD: BE,..
-                <br>
-                Các phòng bắt đầu bằng G thuộc tòa nhà Gamma. VD: G201,...
-                <br>
-                Các phòng tập bằng đầu bằng R thuộc khu vực sân tập Vovinam.
-                <br>
-                Các phòng bắt đầu bằng DE thuộc tòa nhà Delta. VD: DE,..
-                <br>
-                Little UK (LUK) thuộc tầng 5 tòa nhà Delta
-            </p>
-        </div>
+            <div>
+                <p>
+                    <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
+                </p> 
+                <p>
+                    <b>Chú thích:</b> Các hoạt động trong bảng dưới không bao gồm hoạt động ngoại khóa, ví dụ như hoạt động câu lạc bộ ...
+                </p>
+                <p>
+                    Các phòng bắt đầu bằng AL thuộc tòa nhà Alpha. VD: AL...
+                    <br>
+                    Các phòng bắt đầu bằng BE thuộc tòa nhà Beta. VD: BE,..
+                    <br>
+                    Các phòng bắt đầu bằng G thuộc tòa nhà Gamma. VD: G201,...
+                    <br>
+                    Các phòng tập bằng đầu bằng R thuộc khu vực sân tập Vovinam.
+                    <br>
+                    Các phòng bắt đầu bằng DE thuộc tòa nhà Delta. VD: DE,..
+                    <br>
+                    Little UK (LUK) thuộc tầng 5 tòa nhà Delta
+                </p>
+            </div>
         <form action="timetable" method="GET">
             <input type="hidden" value="${param.id}" name="id"/>
             From: <input type="date" name="from" value="${requestScope.from}"/> -
@@ -154,10 +157,12 @@
                 <li>(-): no data was given / chưa có dữ liệu</li>
             </div>
                 <br><!-- comment -->
-            <p>
-                <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="dichvusinhvien@fe.edu.vn" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
-            </p>
+                <p>
+                    <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="dichvusinhvien@fe.edu.vn" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
+                </p>
                 <hr><!-- comment -->
-             
+            <div class="footer">
+                <p>© Powered by <a href="https://fpt.edu.vn/">FPT University</a> |  <a href="https://cmshn.fpt.edu.vn/">CMS</a> |  <a href="https://library.fpt.edu.vn/">library</a> |  <a href="https://library.books24x7.com/login.asp?ic=0">books24x7</a></p>
+            </div>
     </body>
 </html>

@@ -95,7 +95,7 @@
         .time-table table {
             border-collapse: collapse;
             width: 100%;
-            max-width: 800px;
+            max-width: 1500px;
             margin: auto;
             border: 1px solid #6b90da; 
             border-radius: 8px; 
@@ -156,7 +156,7 @@
                     </li>
             </div>
         
-            <div>
+        <div class="content" >
                 <p>
                     <b>Note:</b> These activities do not include extra-curriculum activities, such as club activities ...
                 </p> 

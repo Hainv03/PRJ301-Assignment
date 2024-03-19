@@ -8,14 +8,14 @@ import java.util.Date;
  *
  * @author dell
  */
-public class Attendance implements IEntity{
+public class Attendance implements IEntity{    
     private int id;
     private Student student;
     private Session session;
     private String description;
     private boolean present;
     private Date time;
-
+   
     public int getId() {
         return id;
     }

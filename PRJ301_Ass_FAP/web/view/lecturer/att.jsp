@@ -70,7 +70,7 @@
         table {
             border-collapse: collapse;
             width: 100%;
-            max-width: 800px; 
+            max-width: 1000px; 
             margin: auto; 
         }
 
@@ -90,8 +90,8 @@
         }
 
         .save_data {
-        text-align: center;
-        margin-top: 20px; 
+            text-align: center;
+            margin-top: 20px; 
         }
 
         .save_data input[type="submit"] {
@@ -108,6 +108,13 @@
             background-color: #5a7eb8; 
         }
     </style>
+    <script>
+        function showMessage(event) {
+            event.preventDefault();
+            var messageElement = document.getElementById('saveMessage');
+            messageElement.innerText = 'Data has been saved.';
+        }
+    </script>
     <body>
             <div class="header">
                 <h1>
@@ -156,7 +163,7 @@
                         <thead/>
                         <tbody>
                             <c:forEach items="${requestScope.atts}" var="a">
-                                <tr>
+                                <tr> 
                                     <td>${a.student.id}</td>
                                     <td>${a.student.name}</td>
                                 <td>
@@ -181,7 +188,8 @@
                         <tbody/>
                     </table>
             <div class="save_data" >
-                <input type="submit" value="Save"/>
+                <input type="submit" value="Save" onclick="showMessage(event)"/>
+                <span id="saveMessage" style="margin-right: 10px; color: #7cb342;"></span>
             </div>  
                 </form>
             </div>

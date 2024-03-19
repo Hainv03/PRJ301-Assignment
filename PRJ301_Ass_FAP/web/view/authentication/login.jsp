@@ -48,8 +48,8 @@
         input[type="password"] {
             display: block;
             margin: 0 auto;
-            width: 80%;
-            padding: 10px;
+            width: 70%;
+            padding: 15px;
             margin-bottom: 20px;
             border: 1px solid #cccccc;
             border-radius: 5px;
@@ -64,7 +64,7 @@
             padding: 10px;
             border: none;
             border-radius: 5px;
-            background-color: #007bff;
+            background-color: #ef8d01;
             color: #ffffff;
             font-size: 16px;
             cursor: pointer;

@@ -8,7 +8,6 @@ package controller.authentication;
 import dal.AccountDBContext;
 import entity.Account;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -60,12 +59,10 @@ public abstract class BaseReqAuthentication extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Account account = getAuthenticatedAccount(req);
-        if(account!=null)
-        {
+        if(account!=null){
             doPost(req, resp, account);
         }
-        else
-        {
+        else{
             resp.getWriter().println("access denied!");
         }
     

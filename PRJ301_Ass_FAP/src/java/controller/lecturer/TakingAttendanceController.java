@@ -6,15 +6,12 @@
 package controller.lecturer;
 
 import controller.authentication.BaseReqAuthentication;
-import controller.authentication.authorization.BaseRBACController;
 import dal.SessionDBContext;
 import entity.Account;
 import entity.Attendance;
-import entity.Role;
 import entity.Session;
 import entity.Student;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -25,10 +22,10 @@ import java.util.ArrayList;
  *
  * @author dell
  */
-public class TakingAttendanceController extends BaseRBACController {
+public class TakingAttendanceController extends BaseReqAuthentication {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int seid = Integer.parseInt(req.getParameter("id"));
         SessionDBContext db = new SessionDBContext();
         ArrayList<Student> students = db.getStudentsBySession(seid);
@@ -48,7 +45,7 @@ public class TakingAttendanceController extends BaseRBACController {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int seid = Integer.parseInt(req.getParameter("id"));
         SessionDBContext db = new SessionDBContext();
         ArrayList<Attendance> atts = db.getAttendencesBySession(seid);

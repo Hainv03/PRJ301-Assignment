@@ -14,7 +14,6 @@ import entity.Role;
 import entity.Session;
 import entity.TimeSlot;
 import java.io.IOException;
-import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -27,15 +26,15 @@ import util.DateTimeCV;
  *
  * @author dell
  */
-public class TimeTableController extends BaseRBACController {
+public class TimeTableController extends BaseReqAuthentication {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
         int lid = Integer.parseInt(req.getParameter("id"));
         String raw_from = req.getParameter("from");
         String raw_to = req.getParameter("to");

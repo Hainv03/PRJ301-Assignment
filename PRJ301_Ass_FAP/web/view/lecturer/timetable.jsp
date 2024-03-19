@@ -14,6 +14,8 @@
             font-size: 14px;
             line-height: 1.42857143;
             color: #333;
+            padding: 10px 150px 10px 150px;
+            
         }
         .h1{
             font-family: inherit;
@@ -120,6 +122,7 @@
         .time-table tbody tr:hover {
             background-color: #ddd;
         }
+        
 
     </style>
     <body>
@@ -243,8 +246,8 @@
                 <br>
             <div>
                 <b>More note / Chú thích thêm:</b>
-                <li>(attended): Student had attended this activity / Student đã tham gia hoạt động này</li>
-                <li>(absent): Student had NOT attended this activity / Student đã vắng mặt buổi này</li>
+                <li>(<a style="color: #7cb342">Done</a>): The lecturer took attendance for this lesson / Giảng viên đã điểm danh buổi học này </li>
+                <li>(<a style="color: red">Not yet</a>): The lecturer has not taken attendance for this lesson yet / Giảng biên chưa điểm danh buôi học này </li>
                 <li>(-): no data was given / chưa có dữ liệu</li>
             </div>
                 <br><!-- comment -->

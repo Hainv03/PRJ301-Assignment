@@ -18,6 +18,7 @@
             font-size: 14px;
             line-height: 1.42857143;
             color: #333;
+            padding: 10px 150px 10px 150px;
         }
         .h1{
             font-family: inherit;
@@ -193,7 +194,8 @@
             </div>  
                 </form>
             </div>
-                
+                <br/>
+                <br/>
                 <p>
                     <b>Mọi góp ý, thắc mắc xin liên hệ:</b>  Phòng dịch vụ sinh viên: Email: <a href="dichvusinhvien@fe.edu.vn" >dichvusinhvien@fe.edu.vn</a>. Điện thoại:<b>(024)7308.13.13</b>
                 </p>

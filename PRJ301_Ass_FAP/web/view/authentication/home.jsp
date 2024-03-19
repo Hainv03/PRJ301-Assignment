@@ -14,12 +14,13 @@
         
     </head>
     <style>
-        .body{
+        body{
             margin: auto;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 14px;
             line-height: 1.42857143;
             color: #333;
+            padding: 10px 150px 10px 150px;
         }
         .h1{
             font-family: inherit;
@@ -61,7 +62,7 @@
             line-height: 34px;
             display: inline-block;
             position: absolute;
-            left: 30px;
+            left: 150px;
             top: 130px;
             padding: 0 15px;
             color: #ffffff;

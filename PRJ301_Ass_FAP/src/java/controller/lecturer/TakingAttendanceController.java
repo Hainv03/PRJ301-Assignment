@@ -6,9 +6,11 @@
 package controller.lecturer;
 
 import controller.authentication.BaseReqAuthentication;
+import controller.authentication.authorization.BaseRBACController;
 import dal.SessionDBContext;
 import entity.Account;
 import entity.Attendance;
+import entity.Role;
 import entity.Session;
 import entity.Student;
 import java.io.IOException;
@@ -23,10 +25,10 @@ import java.util.ArrayList;
  *
  * @author dell
  */
-public class TakingAttendanceController extends BaseReqAuthentication {
+public class TakingAttendanceController extends BaseRBACController {
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
         int seid = Integer.parseInt(req.getParameter("id"));
         SessionDBContext db = new SessionDBContext();
         ArrayList<Student> students = db.getStudentsBySession(seid);
@@ -46,7 +48,7 @@ public class TakingAttendanceController extends BaseReqAuthentication {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp, Account account,ArrayList<Role> roles) throws ServletException, IOException {
         int seid = Integer.parseInt(req.getParameter("id"));
         SessionDBContext db = new SessionDBContext();
         ArrayList<Attendance> atts = db.getAttendencesBySession(seid);
@@ -54,4 +56,6 @@ public class TakingAttendanceController extends BaseReqAuthentication {
         req.getRequestDispatcher("/view/lecturer/att.jsp").forward(req, resp);
     
     }
+
+
 }

@@ -37,11 +37,18 @@
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
+            justify-content: center;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 14px; 
+            color: #333333;
         }
 
         input[type="text"],
         input[type="password"] {
-            width: 100%;
+            display: block;
+            margin: 0 auto;
+            width: 80%;
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #cccccc;
@@ -51,7 +58,9 @@
         }
 
         input[type="submit"] {
-            width: 100%;
+            display: block;
+            margin: 0 auto;
+            width: 50%;
             padding: 10px;
             border: none;
             border-radius: 5px;
@@ -71,7 +80,7 @@
     <div class="container">
         <h1>FPT University Academic Portal</h1>
         <form action="login" method="POST">
-            <label for="username">Username</label>
+            <label for="username">User name</label>
             <input type="text" id="username" name="username" required>
             
             <label for="password">Password</label>
